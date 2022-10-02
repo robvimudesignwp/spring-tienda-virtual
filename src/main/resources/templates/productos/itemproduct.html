@@ -23,6 +23,8 @@
     <div th:include="administrador/template_admin.html::header"></div>
     
     <!--================= Product Content  =========================--> 
+    
+    <!-- Show -->
 
     <h2>Control Productos</h2>
     
@@ -46,12 +48,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><img src="https://i.ibb.co/B3vYjvw/buy-1.jpg" alt="" /></td>
-            <td>Camiseta Polo Rock House</td>
-            <td>Lorem ipsum atme is dolor in venum sia dey inmoru seal</td>
-            <td>$190</td>
-            <td>10</td>
+          <tr th:each="pdt:${productos}">
+            <td th:text="${pdt.imagen}"><img src="https://i.ibb.co/B3vYjvw/buy-1.jpg" alt="" /></td>
+            <td th:text="${pdt.nombre}"></td>
+            <td th:text="${pdt.descripcion}"></td>
+            <td th:text="${pdt.precio}">$</td>
+            <td th:text="${pdt.cantidad}"></td>
             <td> 
                 <a  class="btn-edit" href="">Editar</a>
                 <a  class="btn-delete" href="">Borrar</a>

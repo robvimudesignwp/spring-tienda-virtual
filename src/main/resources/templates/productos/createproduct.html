@@ -23,6 +23,7 @@
     <div th:include="administrador/template_admin.html::header"></div>
     
     <!--================= Form Product  ====================-->
+    
     <section class="form-product">
         <form th:action="@{/productos/save}" method="post" enctype="multipart/form-data">
             <h1>Formulario Registrar Productos</h1>
@@ -35,8 +36,7 @@
             </div>
 
             <div>
-                <label for="descripcion">Descripción</label>
-                <textarea placeholder="Escriba una breve descripción del producto" required maxlength='100' minlength='5'>Escribe aqui una breve descripción del producto...</textarea>
+                <textarea placeholder="Escriba una breve descripción del producto" required>Escribe aqui una breve descripción del producto...</textarea>
             </div>
 
             <div>
