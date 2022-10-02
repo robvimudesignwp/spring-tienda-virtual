@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Productos</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+	
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+	
+</head>
+
+<body>
+    
+    <!--================= Header =====================-->  
+    <div th:include="administrador/template_admin.html::header"></div>
+    
+    <!--================= Form Product  ====================-->
+    <section class="form-product">
+        <form th:action="@{/productos/save}" method="post" enctype="multipart/form-data">
+            <h1>Formulario Registrar Productos</h1>
+
+            <hr />
+
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="name" placeholder="Ingrese el nombre del producto" required minlength="2" maxlength="60" />
+            </div>
+
+            <div>
+                <label for="descripcion">Descripción</label>
+                <textarea placeholder="Escriba una breve descripción del producto" required maxlength='100' minlength='5'>Escribe aqui una breve descripción del producto...</textarea>
+            </div>
+
+            <div>
+                <label for="cantidad">Cantidad</label>
+                <input type="number" name="cantidad" min="1" placeholder="0" required/>
+            </div>
+
+            <div>
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" min="1" placeholder="$0.00" required/>
+            </div>
+
+            <div>
+                <label for="foto">Imagen Producto</label>
+                <input type="file" name="foto" id="photo" accept="image/png, image/jpeg" />
+            </div>
+
+            <button class="btn-add" type="submit">Registrar</button>
+        </form>
+      </section>
+    
+    <!--================= Footer  ====================-->  
+    <div th:include="administrador/template_admin.html::footer"></div>
+
+    
+	
+</body>
+</html>

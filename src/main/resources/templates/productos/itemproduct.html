@@ -22,89 +22,69 @@
     <!--================= Header =====================-->  
     <div th:include="administrador/template_admin.html::header"></div>
     
-    <!--================= Home Content  =========================--> 
+    <!--================= Product Content  =========================--> 
+
+    <h2>Control Productos</h2>
     
-    <!-- cart items details -->
-
-<div class="small-container cart-page">
+   
+    <div> 
+        <a  class="btn-add" th:href="@{/productos/createproduct}">Añadir</a>
+    </div>
     
-        <h1>Productos</h1>
-        
-    <a class="btn-default" href="d"><b>+</b> Añadir Producto</a>
-  <table>
-    <tr>
-      <th>Producto</th>
-      <th>Descripción</th>
-      <th>Precio</th>
-      <th>Acción</th>
-      <th>Acción</th>
-      <th>Acción</th>
-    </tr>
-
-    <tr>
-      <td>
-        <div class="cart-info">
-          <img src="https://i.ibb.co/B3vYjvw/buy-1.jpg" alt="" />
-          <div>
-            <p>Red Printed T-Shirt</p>
-          </div>
-        </div>
-      </td>
-      <td>Descripción del producto seleccionado</td>
-      <td>$500.00</td>
-      <td><a class="btn-default" href="#">Editar</a></td>
-      <td><a class="btn-default" href="#">Actualizar</a></td>
-      <td><a class="btn-default" href="#">Borrar</a></td>
-    </tr><!-- End tr -->
-    <tr>
-      <td>
-        <div class="cart-info">
-          <img src="https://i.ibb.co/qmSHWx7/buy-2.jpg" alt="" />
-          <div>
-            <p>HRX Shoes</p>
-            <small>Price ₹1500.00</small>
-            <br />
-            <a href="#">Remove</a>
-          </div>
-        </div>
-      </td>
-      <td><input type="number" value="1" /></td>
-      <td>₹1500.00</td>
-    </tr>
-    <tr>
-      <td>
-        <div class="cart-info">
-          <img src="https://i.ibb.co/NyYtY31/buy-3.jpg" alt="" />
-          <div>
-            <p>Reebok Tracksuit</p>
-            <small>Price ₹1500.00</small>
-            <br />
-            <a href="#">Remove</a>
-          </div>
-        </div>
-      </td>
-      <td><input type="number" value="1" /></td>
-      <td>₹1500.00</td>
-    </tr>
-  </table>
-
-  <div class="total-price">
     <table>
-      <tr>
-        <td>Subtotal</td>
-        <td>₹3500.00</td>
-      </tr>
-      <tr>
-        <td>Tax</td>
-        <td>₹15.00</td>
-      </tr>
-      <tr>
-        <td>Total</td>
-        <td>₹3515.00</td>
-      </tr>
-    </table>
-  </div>
-</div>
-    
+  <tr>
+    <td width="640" class="table-prodcut">
+      <table class="responsive">
+        <thead>
+          <tr>
+            <th class="table-id">Imagen</th>
+            <th class="table-id">Nombre</th>
+            <th class="table-name">Descripción</th>
+            <th class="table-size">Precio</th>
+            <th class="table-size">Cantidad</th>
+            <th class="table-price">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://i.ibb.co/B3vYjvw/buy-1.jpg" alt="" /></td>
+            <td>Camiseta Polo Rock House</td>
+            <td>Lorem ipsum atme is dolor in venum sia dey inmoru seal</td>
+            <td>$190</td>
+            <td>10</td>
+            <td> 
+                <a  class="btn-edit" href="">Editar</a>
+                <a  class="btn-delete" href="">Borrar</a>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="https://i.ibb.co/NyYtY31/buy-3.jpg" alt="" /></td>
+            <td>Sudadera Deportiva Nike</td>
+            <td>Lorem ipsum atme is dolor in venum sia dey inmoru seal</td>
+            <td>$35</td>
+            <td>90</td>
+            <td> 
+                <a  class="btn-edit" href="">Editar</a>
+                <a  class="btn-delete" href="">Borrar</a>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="https://i.ibb.co/qmSHWx7/buy-2.jpg" alt="" /></td>
+            <td>Zapatillas Deportivas Adidas</td>
+            <td>Lorem ipsum atme is dolor in venum sia dey inmoru seal</td>
+            <td>$120</td>
+            <td>100</td>
+            <td> 
+                <a  class="btn-edit" href="">Editar</a>
+                <a  class="btn-delete" href="">Borrar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
     <!--================= Footer  ====================-->  
     <div th:include="administrador/template_admin.html::footer"></div>
