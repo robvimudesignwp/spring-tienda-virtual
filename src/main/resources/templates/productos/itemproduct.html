@@ -49,14 +49,14 @@
         </thead>
         <tbody>
           <tr th:each="pdt:${productos}">
-            <td th:text="${pdt.imagen}"><img src="https://i.ibb.co/B3vYjvw/buy-1.jpg" alt="" /></td>
+            <td th:text="${pdt.imagen}"></td>
             <td th:text="${pdt.nombre}"></td>
             <td th:text="${pdt.descripcion}"></td>
             <td th:text="${pdt.precio}">$</td>
             <td th:text="${pdt.cantidad}"></td>
             <td> 
-                <a  class="btn-edit" href="">Editar</a>
-                <a  class="btn-delete" href="">Borrar</a>
+                <a  class="btn-edit" th:href="@{productos/editproduct/{id} (id=${pdt.id})}">Editar</a>
+                <a  class="btn-delete" th:href="@{productos/delete/{id} (id=${pdt.id})}">Borrar</a>
             </td>
           </tr>
           <tr>
