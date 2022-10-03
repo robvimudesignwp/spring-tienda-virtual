@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -15,16 +14,15 @@ import org.springframework.web.multipart.MultipartFile;
  * @author rober
  */
 
-/**
- * 
- * Clase de servicio para agregar y eliminar imagen
- */
-
+    
 @Service
 public class UploadFileService {
-    private String folder = "images//";
     
-    public String saveImage(@RequestParam(value = "foto") MultipartFile file) throws IOException{
+ /* Clase de servicio para agregar y eliminar imagen */
+
+    private final String folder = "images//";
+    
+    public String saveImage(MultipartFile file) throws IOException{
         if(!file.isEmpty()){
             byte [] bytes = file.getBytes();
             Path path = Paths.get(folder + file.getOriginalFilename());
@@ -41,3 +39,6 @@ public class UploadFileService {
         file.delete();
     }
 }
+    
+    
+  
