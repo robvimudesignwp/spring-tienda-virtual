@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!--******************* Home Administrador *********************** -->
+    <!--******************* Home usuario **********************-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,22 +18,21 @@
 </head>
 
 <body>
+<!--================= Header Usuario =====================-->  
+    <div th:include="usuario/template_user.html::header"></div>
     
-<!--================= Header Admin =====================-->  
-    <div th:include="administrador/template_admin.html::header"></div>
-    
-<!--================= Home Content Admin =========================--> 
+<!--================= Home Content Usuario  =========================--> 
 
 <div class="small-container">
   <div class="row row-2">
     <h2>Todos los productos</h2>
-    <!--<select>
+    <select>
       <option value="">Default Shorting</option>
       <option value="">Short by price</option>
       <option value="">Short by popularity</option>
       <option value="">Short by rating</option>
       <option value="">Short by sale</option>
-    </select>-->
+    </select>
   </div>
   <div class="row" th:each="producto: ${productos}">
     <div class="col-4">
@@ -53,8 +52,8 @@
   </div>
 </div>
 
-<!--================= Footer Admin ====================-->  
-    <div th:include="administrador/template_admin.html::footer"></div>
+<!--================= Footer Usuario ====================-->  
+    <div th:include="usuario/template_user.html::footer"></div>
 
     
 	

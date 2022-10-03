@@ -1,4 +1,4 @@
-<!--========================  Header Admin  ========================-->  
+<!--========================  Header User  ========================-->  
 
  <div th:fragment="header">
 
@@ -11,12 +11,12 @@
             <ul id="MenuItems">
               <li><a th:href="@{/administrador}">Inicio</a></li>
               <li><a th:href="@{/productos}">Productos</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="account.html">Account</a></li>   
+              <li><a href="#">Nosotros</a></li>
+              <li><a href="#">Contacto</a></li>
+              <li><a href="account.html">Cuenta</a></li>   
             </ul>
           </nav>
-          <a href="cart.html"><img th:src="@{/css/img/admin.png}" alt="" width="30px" height="30px" /></a>
+          <a href="cart.html"><img th:src="@{/css/img/user.png}" alt="" width="30px" height="30px" /></a>
           <img src="https://i.ibb.co/6XbqwjD/menu.png" alt="" class="menu-icon" onclick="menutoggle()" />
         </div>
         <hr />
@@ -26,48 +26,47 @@
     
     
     
-<!--========================  Footer Admin ========================-->  
+<!--========================  Footer User ========================-->  
 <div th:fragment="footer">
   <footer class="footer">
     <div class="container">
       <div class="row">
-   <!-- <div class="footer-col-1">
-          <h3>Download Our App</h3>
-          <p>Download App for Android and iso mobile phone.</p>
+        <div class="footer-col-1">
+          <h3>Descarga ya nuestra App</h3>
+          <p>Disponible para MacOs y Windows</p>
           <div class="app-logo">
             <img src="https://i.ibb.co/KbPTYYQ/play-store.png" alt="" />
             <img src="https://i.ibb.co/hVM4X2p/app-store.png" alt="" />
           </div>
-        </div>-->
+        </div>
 
         <div class="footer-col-2">
           <img th:src="@{/css/img/logo.svg}" alt="" />
           <p>
-            ¡Bienvenido al administrador de productos!...
+            Somos un nuevo concepto en moda y estilo
           </p>
         </div>
 
-        <!--<div class="footer-col-3">
-          <h3>Useful Links</h3>
+        <div class="footer-col-3">
+          <h3>Menu</h3>
           <ul>
-            <li>Coupons</li>
-            <li>Blog Post</li>
-            <li>Return Policy</li>
-            <li>Join Affiliate</li>
+            <li>Inicio</li>
+            <li>Productos</li>
+            <li>Nosotros</li>
+            <li>Contacto</li>
+            <li>Cuenta</li>
           </ul>
-        </div>-->
+        </div>
 
-    <!--<div class="footer-col-4">
-          <h3>Follow us</h3>
-          <nav>
+        <div class="footer-col-4">
+          <h3>Redes Sociales</h3>
             <ul>
-               <li><a href="#"></a>Productos</li>
+                <li><a href="https//:www.facebook.com" target="_blank"></a>Facebook</li>
               <li>Twitter</li>
               <li>Instagram</li>
               <li>YouTube</li>
             </ul>
-          </nav>
-        </div>-->
+        </div>
       </div>
       <hr />
       <p class="copyright">Copyright &copy; 2022 - E-commerce</p>

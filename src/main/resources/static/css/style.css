@@ -331,8 +331,13 @@ small {
 }
 
 .footer h3 {
-  color: #ffffff;
+  color: #2f3192;
+  font-weight: 600;
   margin-bottom: 20px;
+}
+
+.footer ul>li{
+    color: #2f3192;
 }
 
 .footer-col-1,
