@@ -4,7 +4,7 @@
     <header class="container">
         <div class="navbar">
           <div class="logo">
-            <a th:href="@{/administrador}"><img src="https://i.ibb.co/kDVwgwp/logo.png" alt="RedStore" width="125px" /></a>
+            <a th:href="@{/administrador}"><img th:src="@{/css/img/logo.svg}" alt="ecommerce"/></a>
           </div>
           <nav>
             <ul id="MenuItems">
@@ -12,10 +12,10 @@
               <li><a th:href="@{/productos}">Productos</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Contact</a></li>
-              <li><a href="account.html">Account</a></li>
+              <li><a href="account.html">Account</a></li>   
             </ul>
           </nav>
-          <a href="cart.html"><img src="https://i.ibb.co/PNjjx3y/cart.png" alt="" width="30px" height="30px" /></a>
+          <a href="cart.html"><img th:src="@{/css/img/admin.png}" alt="" width="30px" height="30px" /></a>
           <img src="https://i.ibb.co/6XbqwjD/menu.png" alt="" class="menu-icon" onclick="menutoggle()" />
         </div>
     </header>
@@ -39,10 +39,9 @@
         </div>
 
         <div class="footer-col-2">
-          <img src="https://i.ibb.co/j3FNGj7/logo-white.png" alt="" />
+          <img th:src="@{/css/img/logo.svg}" alt="" />
           <p>
-            Our Purpose Is To Sustainably Make the Pleasure and Benefits of
-            Sports Accessible to the Many.
+            Tenemos productos de edición limitada, aprovecha nuestros descuentos exclusivos para ti ¡Ingresa ya!...
           </p>
         </div>
 

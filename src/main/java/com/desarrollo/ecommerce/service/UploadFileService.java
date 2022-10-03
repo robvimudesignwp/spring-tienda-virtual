@@ -30,7 +30,7 @@ public class UploadFileService {
             Files.write(path, bytes);
             return file.getOriginalFilename();
         }
-        return "default.jpg";
+        return "default.png";
     }
     
     
