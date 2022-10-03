@@ -39,7 +39,7 @@
       <table class="responsive">
         <thead>
           <tr>
-            <th class="table-id">Imagen</th>
+            <!--<th class="table-id">Imagen</th>-->
             <th class="table-id">Nombre</th>
             <th class="table-name">Descripción</th>
             <th class="table-size">Precio</th>
@@ -49,7 +49,7 @@
         </thead>
         <tbody>
           <tr th:each="pdt:${productos}">
-            <td th:text="${pdt.imagen}"></td>
+            <!--<td th:text="${pdt.imagen}"></td>-->
             <td th:text="${pdt.nombre}"></td>
             <td th:text="${pdt.descripcion}"></td>
             <td th:text="${pdt.precio}">$</td>
@@ -57,28 +57,6 @@
             <td> 
                 <a  class="btn-edit" th:href="@{productos/editproduct/{id} (id=${pdt.id})}">Editar</a>
                 <a  class="btn-delete" th:href="@{productos/delete/{id} (id=${pdt.id})}">Borrar</a>
-            </td>
-          </tr>
-          <tr>
-            <td><img src="https://i.ibb.co/NyYtY31/buy-3.jpg" alt="" /></td>
-            <td>Sudadera Deportiva Nike</td>
-            <td>Lorem ipsum atme is dolor in venum sia dey inmoru seal</td>
-            <td>$35</td>
-            <td>90</td>
-            <td> 
-                <a  class="btn-edit" href="">Editar</a>
-                <a  class="btn-delete" href="">Borrar</a>
-            </td>
-          </tr>
-          <tr>
-            <td><img src="https://i.ibb.co/qmSHWx7/buy-2.jpg" alt="" /></td>
-            <td>Zapatillas Deportivas Adidas</td>
-            <td>Lorem ipsum atme is dolor in venum sia dey inmoru seal</td>
-            <td>$120</td>
-            <td>100</td>
-            <td> 
-                <a  class="btn-edit" href="">Editar</a>
-                <a  class="btn-delete" href="">Borrar</a>
             </td>
           </tr>
         </tbody>
