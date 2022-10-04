@@ -37,10 +37,10 @@
                                 <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg" alt = "shoe image">
                             </div>
                         </div>
-                        <div class = "img-select">
-                            <div class = "img-item">
-                                <a href = "#" data-id = "1">
-                                    <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt = "shoe image">
+                        <div class="img-select">
+                            <div class="img-item">
+                                <a href="#" data-id="1">
+                                    <img th:src="@{/images/{img} (img=${producto.imagen})}" alt="">
                                 </a>
                             </div>
                             <div class = "img-item">
@@ -61,21 +61,21 @@
                         </div>
                     </div>
                     <!-- card right -->
-                    <div class = "product-content">
-                        <h2 class = "product-title">nike shoes</h2>
+                    <div class="product-content">
+                        <h2 class="product-title" th:text="${producto.nombre}"></h2>
                         
-                        <div class = "product-price">
-                            <p class = "new-price">Precio: <span>$249.00</span></p>
+                        <div class="product-price">
+                            <p class="new-price" th:text=" 'Precio:' + ${producto.precio}"> <span>$249.00</span></p>
                         </div>
 
-                        <div class = "product-detail">
+                        <div class="product-detail">
                             <h2>Descripción del producto</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+                            <p th:text="${producto.descripcion}"></p>
                         </div>
 
                         <div class = "purchase-info">
-                             Cantidad:<input type = "number" min = "1" value = "1">
-                            <button type = "button" class = "btn-add">
+                             Cantidad:<input type="number" min="1" max="10" value="1">
+                            <button type="button" class="btn-add">
                                 Añadir al Carrito 
                             </button>
                         </div>
