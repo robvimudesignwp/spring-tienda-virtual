@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!--******************* Home usuario **********************-->
+    <!--******************* Home Usuario **********************-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,37 +23,37 @@
     
 <!--================= Home Content Usuario  =========================--> 
 
-<div class="small-container">
-  <div class="row row-2">
-    <h2>Todos los productos</h2>
-    <select>
-      <option value="">Default Shorting</option>
-      <option value="">Short by price</option>
-      <option value="">Short by popularity</option>
-      <option value="">Short by rating</option>
-      <option value="">Short by sale</option>
-    </select>
-  </div>
-  <div class="row" th:each="producto: ${productos}">
-    <div class="col-4">
-      <img th:src="@{/images/{img} (img=${producto.imagen})}" alt="" />
-      <h4 th:text="${producto.nombre}"></h4>
-      <p th:text="${producto.precio}"></p>
-      <a class="btn-default">Ver Producto</a>
+    <div class="small-container">
+      <div class="row row-2">
+        <h2>Todos los productos</h2>
+        <select>
+          <option value="">Default Shorting</option>
+          <option value="">Short by price</option>
+          <option value="">Short by popularity</option>
+          <option value="">Short by rating</option>
+          <option value="">Short by sale</option>
+        </select>
+      </div>
+      <div class="row" th:each="producto: ${productos}">
+        <div class="col-4">
+          <img th:src="@{/images/{img} (img=${producto.imagen})}" alt="" />
+          <h4 th:text="${producto.nombre}"></h4>
+          <p th:text="${producto.precio}"></p>
+          <a class="btn-default" th:href="@{/productohome/{id} (id=${producto.id})}">Ver Producto</a>
+        </div>
+      </div>
+
+      <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>
+      </div>
     </div>
-  </div>
 
-  <div class="page-btn">
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
-    <span>4</span>
-    <span>&#8594;</span>
-  </div>
-</div>
-
-<!--================= Footer Usuario ====================-->  
-    <div th:include="usuario/template_user.html::footer"></div>
+    <!--================= Footer Usuario ====================-->  
+        <div th:include="usuario/template_user.html::footer"></div>
 
     
 	

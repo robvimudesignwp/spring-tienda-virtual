@@ -19,10 +19,10 @@
 
 <body>
     
-    <!--================= Header =====================-->  
+    <!--================= Header Admin Template =====================-->  
     <div th:include="administrador/template_admin.html::header"></div>
     
-    <!--================= Form Update Product  ====================-->
+    <!--================= Form Update Product Admin  ====================-->
     
     <section class="form-product">
         <form th:action="@{/productos/update}" method="post" enctype="multipart/form-data">
@@ -60,7 +60,7 @@
         </form>
       </section>
     
-    <!--================= Footer  ====================-->  
+    <!--================= Footer Admin Template  ====================-->  
     <div th:include="administrador/template_admin.html::footer"></div>
 
     
