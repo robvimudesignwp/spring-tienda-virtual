@@ -62,6 +62,7 @@
                     </div>
                     <!-- card right -->
                     <form class="product-content" th:action="@{/carrito}" method="post">
+                        <input type="hidden" th:value="${producto.id}" name="id">
                         <h2 class="product-title" th:text="${producto.nombre}"></h2>
                         
                         <div class="product-price">
@@ -74,7 +75,7 @@
                         </div>
 
                         <div class="purchase-info">
-                             Cantidad:<input type="number" min="1" max="10" value="1">
+                             Cantidad:<input type="number" min="1" max="10" value="1" id="cantidad" name="cantidad">
                             <button type="submit" class="btn-add">
                                 Añadir al Carrito 
                             </button>
