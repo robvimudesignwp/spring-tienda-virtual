@@ -911,7 +911,7 @@ img{
     text-transform: capitalize;
     font-weight: 700;
     position: relative;
-    color: #12263a;
+    color: #2f3192;
     margin: 1rem 0;
 }
 .product-title::after{
@@ -919,12 +919,13 @@ img{
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 4px;
-    width: 80px;
-    background: #12263a;
+    height: 2px;
+    width: 100%;
+    background: #2f3192;
 }
 
 .product-price{
+    color: #2f3192;
     margin: 1rem 0;
     font-size: 1rem;
     font-weight: 700;
@@ -997,5 +998,111 @@ img{
     }
 }
 
+/*================ Carrito de Compras ===============*/
 
 
+ h3{
+  text-shadow: 2px 2px 8px rgba(70, 74, 110, 0);
+}
+
+ input{
+  width: 40px;
+}
+
+.title-cart h3{
+    color: #2f3192;
+    font-weight: 700;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.title-cart p{
+  color: #2f3192;
+  font-size: 16px;
+  text-align: center;
+}
+
+.shopping-cart, .Table{
+    justify-content:  center;
+}
+
+ .shopping-cart {
+    font-family: "Poppins", sans-serif;
+    width: auto;
+    height: 150px;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+ .Table.shopping-cart .TableCell, .Table.shopping-cart .TableHead {
+    border: 0px solid #AAAAAA;
+    padding: 15px 15px;
+  }
+
+  .Table.shopping-cart .TableBody .TableCell {
+    font-size: 15px;
+  }
+  
+  .Table.shopping-cart .product:nth-child(even){
+    background: #d4d8dc;
+  }
+  
+  .Table.shopping-cart .column-labels {
+      border-bottom: 1px solid #2f3192;
+  }
+  
+  .shopping-cart .column-labels .TableHead {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2f3192;
+    text-align: left;
+  }
+
+ /* I added the dollar sign next to price */
+  .product .product-price:before, .product .product-line-price:before, .totals-value:before {
+    content: '$';
+  }
+  
+  .totals-value{
+      color: #2f3192;
+  }
+  
+  .totals-item, .totals-value {
+      font-weight: 700;
+  }
+  
+  .totals-item, .totals-value b{
+      color: #2f3192;
+  }
+  
+  .product-line-price{
+      color: #2f3192;
+      font-weight: 700;
+  }
+  
+  .totals {
+    display: table-row;
+  }
+ 
+  /*=== Table ===*/
+  .Table{ display: table; }
+  .product { display: table-row; }
+  .column-labels { display: table-header-group;}
+  .TableCell, .TableHead { display: table-cell;}
+  .column-labels { display: table-header-group;}
+  .TableBody { display: table-row-group;}
+
+  /*=== checkout button ===*/
+  .btn-check {
+    cursor: pointer;
+    float: right;
+    border: 0;
+    margin-top: 20px;
+    margin-right: -180%;
+    padding: 6px 10px;
+    background-color: #5cb85c;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+ 

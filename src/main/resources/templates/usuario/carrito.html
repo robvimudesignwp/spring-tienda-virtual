@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--================= Carrito Compras Usuario =====================-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito Compras</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+	
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+	
+</head>
+
+    <body>
+        
+        <!--================= Header Carrito Usuario =====================-->  
+        <div th:include="usuario/template_user.html::header"></div>
+    
+      <!--================= Contenido Carrito Usuario  =========================-->
+      
+        <section>
+            <div class="title-cart">
+                <h3>Tu carrito</h3>
+                <p>Aquí estan añadidos tus articulos  <br>
+                Cuando estes listo para comprar dale click al boton Comprar y confirma tu pedido.</p>
+           </div>
+
+           <div class="shopping-cart Table">
+                <div class="column-labels">
+                     <label class="product-details TableHead">Producto</label>
+                     <label class="product-details TableHead">Descripción</label>
+                     <label class="product-price TableHead">Precio</label>
+                     <label class="product-quantity TableHead">Cantidad</label>
+                     <label class="product-line-price TableHead">Costo</label>
+                </div>
+
+                <div class="TableBody">
+                    <div class="product">
+                        <div class="product-title TableCell">Cotton T-Shirt, Medium</div>
+                        <div class="product-title TableCell">Lorem ipsum dolor atme is devil join iyt wegrw</div>
+                        <div class="product-price TableCell">1.99</div>
+                        <div class="product-quantity TableCell">
+                            <input type="number" value="1" min="1">
+                        </div>
+                        <div class="product-line-price TableCell">1.99</div>
+                        <div class="product-removal TableCell">
+                             <button class="btn-delete">Borrar</button>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-title TableCell">Baseball Cap, One Size</div>
+                        <div class="product-title TableCell">Lorem ipsum dolor atme is devil join iyt wegrw</div>
+                        <div class="product-price TableCell">2.99</div>
+                        <div class="product-quantity TableCell">
+                            <input type="number" value="2" min="1">
+                        </div>
+                        <div class="product-line-price TableCell">5.98</div>
+                        <div class="product-removal TableCell">
+                            <button class="btn-delete">Borrar</button>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                         <div class="product-title TableCell">Swim Shorts, Medium</div>
+                         <div class="product-title TableCell">Lorem ipsum dolor atme is devil join iyt wegrw</div>
+                         <div class="product-price TableCell">3.99</div>
+                         <div class="product-quantity TableCell">
+                             <input type="number" value="1" min="1">
+                         </div>
+                         <div class="product-line-price TableCell">3.99</div>
+                         <div class="product-removal TableCell">
+                             <button class="btn-delete">Borrar</button>
+                         </div>
+                    </div>
+
+                    <div class="totals">
+                        <div class="totals-item TableCell">Subtotal</div>
+                        <div class="TableCell"></div>
+                        <div class="TableCell"></div>
+                        <div class="totals-value TableCell" id="cart-subtotal">11.96</div>
+                    </div>
+
+                    <div class="totals">
+                        <div class="totals-item TableCell">VAT @ 20%</div>
+                        <div class="TableCell"></div>
+                        <div class="TableCell"></div>
+                        <div class="totals-value TableCell" id="cart-vat">2.39</div>
+                    </div>
+
+                    <div class="totals">
+                        <div class="totals-item TableCell"><b>Total Cost</b></div>
+                        <div class="TableCell"></div>
+                        <div class="TableCell"></div>
+                        <div class="totals-value TableCell" id="cart-total"><b>14.35</b></div>
+                    </div>
+
+                     <button class="btn-check">Comprar</button>
+                 </div>
+             </div>
+        </section>
+      
+        <!--================= Footer Carrito Usuario ====================-->  
+        <div th:include="usuario/template_user.html::footer"></div>
+
+    </body>
+</html>
