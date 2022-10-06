@@ -924,7 +924,7 @@ img{
     background: #2f3192;
 }
 
-.product-price{
+.product-price,.product-quantity{
     color: #2f3192;
     margin: 1rem 0;
     font-size: 1rem;
@@ -1055,7 +1055,7 @@ img{
     font-size: 16px;
     font-weight: bold;
     color: #2f3192;
-    text-align: left;
+    text-align: center;
   }
 
  /* I added the dollar sign next to price */

@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -28,7 +27,7 @@ public class DetalleOrden {
     private Double precio;
     private Double total;
     
-    @OneToOne
+    @ManyToOne
     private Orden orden;
     
     @ManyToOne
@@ -38,6 +37,7 @@ public class DetalleOrden {
     }
 
     public DetalleOrden(Integer id, String nombre, Double cantidad, Double precio, Double total) {
+        super();
         this.id = id;
         this.nombre = nombre;
         this.cantidad = cantidad;
@@ -107,6 +107,7 @@ public class DetalleOrden {
     public String toString() {
         return "DetalleOrden{" + "id=" + id + ", nombre=" + nombre + ", cantidad=" + cantidad + ", precio=" + precio + ", total=" + total + '}';
     }
+
     
     
 }

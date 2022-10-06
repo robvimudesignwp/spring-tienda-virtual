@@ -32,7 +32,7 @@ public class HomeController {
     @Autowired 
     private ProductoService productoService; //Acceder a los productos agregados desde el admin
     
-    List<DetalleOrden> detalles = new ArrayList<DetalleOrden>();//almacenamos los detalles de la orden de compra
+    List<DetalleOrden> detalles = new ArrayList<>();//almacenamos los detalles de la orden de compra
     
     Orden orden = new Orden();
     
@@ -55,7 +55,7 @@ public class HomeController {
     }
     
     @PostMapping("/carrito")
-    public String addCart(@RequestParam Integer id, @RequestParam Integer cantidad ){
+    public String addCart(@RequestParam Integer id, @RequestParam Double cantidad, Model model ){
         
         DetalleOrden detalleOrden = new DetalleOrden();
         Producto producto = new Producto();
@@ -64,7 +64,22 @@ public class HomeController {
         Optional<Producto> optionalProducto = productoService.get(id);
         log.info("Producto añadido: {}", optionalProducto.get());
         log.info("Cantidad: {}", cantidad);
+        producto = optionalProducto.get();
         
+        detalleOrden.setCantidad(cantidad);
+        detalleOrden.setPrecio(producto.getPrecio());
+        detalleOrden.setNombre(producto.getNombre());
+        detalleOrden.setTotal(producto.getPrecio() * cantidad);
+        detalleOrden.setProducto(producto);
+        
+        detalles.add(detalleOrden);
+        
+        sumaTotal = detalles.stream().mapToDouble(dt -> dt.getTotal()).sum(); //sumamos todos los valores
+        
+        orden.setTotal(sumaTotal);
+        model.addAttribute("carrito", detalles);
+        model.addAttribute("orden", orden);
+             
         return "usuario/carrito";
     }
 }

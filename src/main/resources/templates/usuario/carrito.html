@@ -34,71 +34,29 @@
            <div class="shopping-cart Table">
                 <div class="column-labels">
                      <label class="product-details TableHead">Producto</label>
-                     <label class="product-details TableHead">Descripción</label>
                      <label class="product-price TableHead">Precio</label>
                      <label class="product-quantity TableHead">Cantidad</label>
-                     <label class="product-line-price TableHead">Costo</label>
+                     <label class="product-line-price TableHead">Total</label>
                 </div>
 
                 <div class="TableBody">
-                    <div class="product">
-                        <div class="product-title TableCell">Cotton T-Shirt, Medium</div>
-                        <div class="product-title TableCell">Lorem ipsum dolor atme is devil join iyt wegrw</div>
-                        <div class="product-price TableCell">1.99</div>
-                        <div class="product-quantity TableCell">
-                            <input type="number" value="1" min="1">
-                        </div>
-                        <div class="product-line-price TableCell">1.99</div>
+                    <div class="product" th:each="dorden:${carrito}">
+                        <div class="product-title TableCell" th:text="${dorden.nombre}"></div>
+                        <div class="product-price TableCell" th:text="${dorden.precio}"></div>
+                        <div class="product-quantity TableCell" th:text="${dorden.cantidad}"></div>
+                        <div class="product-price TableCell" th:text="${dorden.total}"></div>
+                        
                         <div class="product-removal TableCell">
                              <button class="btn-delete">Borrar</button>
                         </div>
                     </div>
 
-                    <div class="product">
-                        <div class="product-title TableCell">Baseball Cap, One Size</div>
-                        <div class="product-title TableCell">Lorem ipsum dolor atme is devil join iyt wegrw</div>
-                        <div class="product-price TableCell">2.99</div>
-                        <div class="product-quantity TableCell">
-                            <input type="number" value="2" min="1">
-                        </div>
-                        <div class="product-line-price TableCell">5.98</div>
-                        <div class="product-removal TableCell">
-                            <button class="btn-delete">Borrar</button>
-                        </div>
-                    </div>
-
-                    <div class="product">
-                         <div class="product-title TableCell">Swim Shorts, Medium</div>
-                         <div class="product-title TableCell">Lorem ipsum dolor atme is devil join iyt wegrw</div>
-                         <div class="product-price TableCell">3.99</div>
-                         <div class="product-quantity TableCell">
-                             <input type="number" value="1" min="1">
-                         </div>
-                         <div class="product-line-price TableCell">3.99</div>
-                         <div class="product-removal TableCell">
-                             <button class="btn-delete">Borrar</button>
-                         </div>
-                    </div>
-
+                    
                     <div class="totals">
                         <div class="totals-item TableCell">Subtotal</div>
                         <div class="TableCell"></div>
                         <div class="TableCell"></div>
-                        <div class="totals-value TableCell" id="cart-subtotal">11.96</div>
-                    </div>
-
-                    <div class="totals">
-                        <div class="totals-item TableCell">VAT @ 20%</div>
-                        <div class="TableCell"></div>
-                        <div class="TableCell"></div>
-                        <div class="totals-value TableCell" id="cart-vat">2.39</div>
-                    </div>
-
-                    <div class="totals">
-                        <div class="totals-item TableCell"><b>Total Cost</b></div>
-                        <div class="TableCell"></div>
-                        <div class="TableCell"></div>
-                        <div class="totals-value TableCell" id="cart-total"><b>14.35</b></div>
+                        <div class="totals-value TableCell"  id="cart-total"><b></b></div>
                     </div>
 
                      <button class="btn-check">Comprar</button>
