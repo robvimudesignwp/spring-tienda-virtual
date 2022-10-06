@@ -28,7 +28,7 @@
             <div class="title-cart">
                 <h3>Tu carrito</h3>
                 <p>Aquí estan añadidos tus articulos  <br>
-                Cuando estes listo para comprar dale click al boton Comprar y confirma tu pedido.</p>
+                Cuando estes listo para pagar dale click al boton Comprar y confirma tu pedido.</p>
            </div>
 
            <div class="shopping-cart Table">
@@ -47,7 +47,7 @@
                         <div class="product-price TableCell" th:text="${dorden.total}"></div>
                         
                         <div class="product-removal TableCell">
-                             <button class="btn-delete">Borrar</button>
+                             <a th:href="@{/delete/carrito/{id} (id=${dorden.producto.id}) }" class="btn-delete">Borrar</a>
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@
                         <div class="totals-item TableCell">Subtotal</div>
                         <div class="TableCell"></div>
                         <div class="TableCell"></div>
-                        <div class="totals-value TableCell"  id="cart-total"><b></b></div>
+                        <div class="totals-value TableCell"  id="cart-total" th:text="${orden.total}"><b></b></div>
                     </div>
 
                      <button class="btn-check">Comprar</button>

@@ -7,6 +7,7 @@ import com.desarrollo.ecommerce.model.Producto;
 import com.desarrollo.ecommerce.service.ProductoService;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,6 +81,39 @@ public class HomeController {
         model.addAttribute("carrito", detalles);
         model.addAttribute("orden", orden);
              
+        return "usuario/carrito";
+    }
+    
+    /**
+     * Eliminar un producto seleccionado del carrito de compras
+     * @param id
+     * @param model
+     * @return 
+     */
+    
+    @GetMapping("/delete/carrito/{id}")
+    public String deleteProductoCarrito(@PathVariable Integer id, Model model){
+        
+        //Lista nueva de productos
+        List<DetalleOrden> ordenesNuevas = new ArrayList<>();
+        
+        for(DetalleOrden detalleOrden: detalles){
+            if(!Objects.equals(detalleOrden.getProducto().getId(), id)){
+                ordenesNuevas.add(detalleOrden);
+            }
+        }
+        
+        //Agregamos una nueva lista con los productos restantes
+        detalles = ordenesNuevas;
+        
+        //Recalculamos los productos
+        double sumaTotal = 0;
+        sumaTotal = detalles.stream().mapToDouble(dt -> dt.getTotal()).sum();
+        
+        orden.setTotal(sumaTotal);
+        model.addAttribute("carrito", detalles);
+        model.addAttribute("orden", orden);
+        
         return "usuario/carrito";
     }
 }
