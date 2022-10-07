@@ -1,4 +1,3 @@
- //Menu Hamburguesa
  var MenuItems = document.getElementById('MenuItems');
   MenuItems.style.maxHeight = '0px';
 
@@ -10,7 +9,6 @@
     }
   }
   
-  //Slider Producto
 const imgs = document.querySelectorAll('.img-select a');
 const imgBtns = [...imgs];
 let imgId = 1;

@@ -430,62 +430,29 @@ ul {
 
 
 .container-products{
-  /*align-items: center;*/
   display: flex;
-  /*justify-content: space-between;*/
-  margin: 0;
-  flex-flow: row wrap;
-  padding: 0;
+  flex-flow: column nowrap;
 }
-
-.items-product{
-    align-items: center;
-    display: flex;
-    flex-basis: 16.666%;
-    flex-grow: 0;
-    flex-shrink: 0;
-    justify-content: center;
-    padding: 1rem;
-}
-
-@media (min-width: 56rem){
-    .items-product{
-       width: 33.3333%; 
-    }
-        
- }
-
-@media (min-width: 40rem){
-    .items-product{
-        width: 30%;
-    }
-        
- }
 
 .section-grid{
    display: flex; 
-   flex-direction: column;
    padding-left: 25px;
    padding-right: 25px;
-   overflow: hidden;
 }
 
 .grid-product{
   flex: 1 1 auto;
   display: flex; 
-  flex-direction: column;
-  padding: 1rem;  
+  flex-flow: row wrap;  
 }
-.image-product-container{
-  background-color: #337ab7;
-  margin-bottom: 20px;
-  height: auto;
-  width: 100%;
+.product-grid{
+  flex: 1 1 25%;
+  margin:2%;
+  padding:12px;
+  border: 2px solid #000;
 }
 
-.image-product{
-  height: auto;
-  vertical-align: middle;
+.product-grid img{
   width:100%;
 }
 
@@ -798,10 +765,6 @@ body {
   background: #eee;
 }
 
-table>.responsive h2{
-    color: #2f3192;
-}
-
 .responsive th {
   font-weight: bold;
   background: #2f3192;
@@ -864,16 +827,8 @@ table>.responsive h2{
     content: "Cantidad";
   }
   
-  .responsive td:nth-of-type(5):before{
+  .responsive td:nth-of-type(5):before {
     content: "Acción";
-  }
-  
-  .responsive td:nth-of-type(6):after {
-    content: "Producto";
-  }
-  
-  .responsive td:nth-of-type(5):after {
-    content: "Precio";
   }
   
 }
@@ -1177,132 +1132,4 @@ img{
     font-size: 20px;
   }
   
-  
-  /*=========== resumen orden compra ============ */
-  
-.flexible {
-  width: 100%;
-  border-collapse: collapse;
-}
-.flexible tr:nth-of-type(odd) {
-  background: #eee;
-}
-
-table>.flexible h2{
-    color: #2f3192;
-}
-
-.flexible th {
-  font-weight: bold;
-  background: #2f3192;
-  color: white;
-}
-.flexible th, .flexible td {
-  text-align: center;
-  padding: 6px;
-}
-  
- @media only screen and (max-width: 640px) { 
-.flexible, .flexible thead, .flexible tbody, .flexible th, .flexible td, .flexible tr {
-    display: block;
-  }
-  .flexible {
-    border-top: 1px solid #bbb;
-    border-left: 1px solid #bbb;
-    border-right: 1px solid #bbb;
-  }
-  .flexible thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-  .flexible td {
-    border: none;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-    padding-left: 50%;
-  }
-  .flexible td:nth-of-type(4) {
-    border-bottom: 0;
-  }
-  .flexible tr {
-    border-bottom: 1px solid #bbb;
-    padding: 10px;
-  }
-  .flexible td:before {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-    font-weight: bold;
-  }
-  .flexible td:nth-of-type(1):before {
-    content: "Producto";
-  }
-  
-  .flexible td:nth-of-type(2):before {
-    content: "Precio";
-  }
-  .flexible td:nth-of-type(3):before {
-    content: "Cantidad";
-  }
-  .flexible td:nth-of-type(4):before {
-    content: "Total";
-  } 
-}
-
-div .btn-add{
-    float: right;
-    margin: 0 50px auto;
-}
-
-.summary tr, .summary td{
-    color: #2f3192;
-    display: block;
-    font-weight: 700;
-    font-size: 18px;
-    margin-right: 15px;
-    text-align: right;
-}
-.info label{
-  color: #2f3192;
-  display: block;
-  margin-left: 0;
-}
-
-.info h2{
-    color: #2f3192;
-}
-
-.order-title{
-    color: #2f3192;
-    padding: 15px 20px;
-}
-.mid,info {
-    padding: 20px;
-}
-
-.legalcopy{
-  margin-top: 1rem;
-}
-
-.legal strong{
-    display: block;
-    margin: 5px;    
-}
-
-.legal{
-    color: #2f3192;
-    align-content: center;
-    padding: 15px 100px;
-    text-align: center;
-    margin: 80px 0 40px 0;
-}
-
-
-
-
-
  

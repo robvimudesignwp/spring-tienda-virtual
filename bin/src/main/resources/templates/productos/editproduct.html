@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Productos</title>
+    <title>Editar Productos</title>
 
     <link rel="stylesheet" th:href="@{/css/style.css}">
 	
@@ -19,47 +19,48 @@
 
 <body>
     
-    <!--================= Header =====================-->  
+    <!--================= Header Admin Template =====================-->  
     <div th:include="administrador/template_admin.html::header"></div>
     
-    <!--================= Form Product  ====================-->
+    <!--================= Form Update Product Admin  ====================-->
     
     <section class="form-product">
-        <form th:action="@{/productos/save}" method="post" enctype="multipart/form-data">
-            <h1>Formulario Registrar Producto</h1>
+        <form th:action="@{/productos/update}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" th:value="${producto.id}">
+            <h1>Formulario Editar Producto</h1>
 
             <hr />
 
             <div>
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre del producto" required minlength="2" maxlength="60" />
+                <input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre del producto" required minlength="2" maxlength="60" th:value="${producto.nombre}" />
             </div>
 
             <div>
                 <label for="descripcion">Descripción</label>
-                <textarea name="descripcion" id="descripcion" placeholder="Escriba una breve descripción del producto" required></textarea>
+                <textarea name="descripcion" id="descripcion" placeholder="Escriba una breve descripción del producto" required th:text="${producto.descripcion}"></textarea>
             </div>
 
             <div>
                 <label for="cantidad">Cantidad</label>
-                <input type="number" name="cantidad" id="cantidad" min="1" placeholder="0" required/>
+                <input type="number" name="cantidad" id="cantidad" min="1" placeholder="0" required th:value="${producto.cantidad}"/>
             </div>
 
             <div>
                 <label for="precio">Precio</label>
-                <input type="number" name="precio" id="precio" min="1" placeholder="$0.00" required/>
+                <input type="number" name="precio" id="precio" min="1" placeholder="$0.00" required th:value="${producto.precio}"/>
             </div>
 
             <div>
                 <label for="foto">Imagen Producto</label>
-                <input type="file" name="image" id="foto" accept="image/*"/>
+                <input type="file" name="foto" id="foto" accept="image/png, image/jpeg"/>
             </div>
 
             <button class="btn-add" type="submit">Registrar</button>
         </form>
       </section>
     
-    <!--================= Footer  ====================-->  
+    <!--================= Footer Admin Template  ====================-->  
     <div th:include="administrador/template_admin.html::footer"></div>
 
     

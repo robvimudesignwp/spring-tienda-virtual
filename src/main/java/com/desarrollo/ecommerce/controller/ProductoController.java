@@ -47,7 +47,7 @@ public class ProductoController {
     }
     
     @PostMapping("/save")
-    public String save(Producto producto,@RequestParam(value ="foto") MultipartFile file) throws IOException{
+    public String save(Producto producto,@RequestParam(value ="image") MultipartFile file) throws IOException{
         LOGGER.info("Este es el objeto producto {}", producto);
         Usuario u = new Usuario(1, "", "", "", "", "", "", "");
         producto.setUsuario(u);
@@ -79,7 +79,7 @@ public class ProductoController {
     }
     
     @PostMapping("/update")
-    public String update(Producto producto, @RequestParam(value = "foto") MultipartFile file) throws IOException{
+    public String update(Producto producto, @RequestParam(value = "image") MultipartFile file) throws IOException{
         Producto p = new Producto();
         p = productoService.get(producto.getId()).get();//obtenemos el producto
         

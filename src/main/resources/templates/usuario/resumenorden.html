@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--================= Resumen Compra Usuario =====================-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito Compras</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+	
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+	
+</head>
+
+    <body>
+        
+        <!--================= Header Resumen Compra Usuario =====================-->  
+        <div th:include="usuario/template_user.html::header"></div>
+        
+        <!--================= Contenido Resumen Compra Usuario  =========================-->
+          <section>
+                
+              <div class="mid">
+                <div class="info">
+                  <h2>Datos Orden</h2>
+                  <label>Nombre : Juan Carlos Sinisterra</label>
+                  <label>Direccion : Avenida 3 Norte 8-40</label>
+                  <label>Correo : jcsinisterra@gmail.com</label> 
+                  <label>Telefono : (+57) 3110997601</label> 
+                </div>
+              </div><!--End Invoice Mid-->
+              <div class="order-title">  
+                   <h2>Productos</h2>
+              </div>
+
+                <table class="flexible"> 
+                    <thead> 
+                      <tr>
+                        <th class="table-id">Producto</th>
+                        <th class="table-name">Precio</th>
+                        <th class="table-size">Cantidad</th>
+                        <th class="table-size">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr >
+                        <td>Camiseta XL Hombre</td>
+                        <td>$87</td>
+                        <td>4</td>
+                        <td>$549</td>
+                      </tr>
+                    </tbody>
+                </table>
+              
+                <table class="summary">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td>Total:</td>
+                              <td>$549</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td> 
+                    </tr>
+                  </tbody>
+                </table>
+              
+              <div><button class="btn-add" type="submit">Generar</button></div>
+
+                <div class="legalcopy">
+                    <p class="legal"><strong>Gracias por tu compra!</strong>  Se espera el pago en un plazo de 30 días; por favor, tramita esta factura dentro del plazo establecido. Se cobrará un 5% de interés mensual por las facturas atrasadas. 
+                    </p>
+                </div>
+          </section>
+        
+         <!--================= Footer Resumen Compra Usuario ====================-->  
+        <div th:include="usuario/template_user.html::footer"></div>
+
+    </body>
+</html>

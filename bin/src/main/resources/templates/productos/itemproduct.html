@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+	
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+	
+</head>
+
+<body>
+    
+    <!--================= Header =====================-->  
+    <div th:include="administrador/template_admin.html::header"></div>
+    
+    <!--================= Product Content  =========================--> 
+    
+    <!-- Show -->
+
+    <h2>Control Productos</h2>
+    
+   
+    <div> 
+        <a  class="btn-add" th:href="@{/productos/createproduct}">Añadir</a>
+    </div>
+    
+    <table>
+  <tr>
+    <td width="640" class="table-prodcut">
+      <table class="responsive">
+        <thead>
+          <tr>
+            <!--<th class="table-id">Imagen</th>-->
+            <th class="table-id">Nombre</th>
+            <th class="table-name">Descripción</th>
+            <th class="table-size">Precio</th>
+            <th class="table-size">Cantidad</th>
+            <th class="table-price">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="pdt:${productos}">
+            <!--<td th:text="${pdt.imagen}"></td>-->
+            <td th:text="${pdt.nombre}"></td>
+            <td th:text="${pdt.descripcion}"></td>
+            <td th:text="${pdt.precio}">$</td>
+            <td th:text="${pdt.cantidad}"></td>
+            <td> 
+                <a  class="btn-edit" th:href="@{productos/editproduct/{id} (id=${pdt.id})}">Editar</a>
+                <a  class="btn-delete" th:href="@{productos/delete/{id} (id=${pdt.id})}">Borrar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+    <!--================= Footer  ====================-->  
+    <div th:include="administrador/template_admin.html::footer"></div>

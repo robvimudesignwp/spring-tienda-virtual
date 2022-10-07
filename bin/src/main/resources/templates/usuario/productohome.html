@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--******************* Detalle Producto Usuario **********************-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
+
+        <!-- font awesome -->
+        <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+
+    </head>
+
+    <body>
+
+        <!--================= Header Producto Usuario =====================-->  
+        <div th:include="usuario/template_user.html::header"></div>
+
+        <!--================= Section Contenido Producto Usuario  =========================--> 
+        
+        <section>
+            <div class="card-wrapper">
+                <div class="card">
+                    <!-- card left -->
+                    <div class="product-imgs">
+                        <div class="img-display">
+                            <div class="img-showcase">
+                                <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt = "shoe image">
+                                <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_2.jpg" alt = "shoe image">
+                                <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_3.jpg" alt = "shoe image">
+                                <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg" alt = "shoe image">
+                            </div>
+                        </div>
+                        <div class="img-select">
+                            <div class="img-item">
+                                <a href="#" data-id="1">
+                                    <img th:src="@{/images/{img} (img=${producto.imagen})}" alt="">
+                                </a>
+                            </div>
+                            <div class="img-item">
+                                <a href="#" data-id="2">
+                                    <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_2.jpg" alt = "shoe image">
+                                </a>
+                            </div>
+                            <div class="img-item">
+                                <a href="#" data-id="3">
+                                    <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_3.jpg" alt = "shoe image">
+                                </a>
+                            </div>
+                            <div class="img-item">
+                                <a href="#" data-id="4">
+                                    <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg" alt = "shoe image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card right -->
+                    <form class="product-content" th:action="@{/carrito}" method="post">
+                        <input type="hidden" th:value="${producto.id}" name="id">
+                        <h2 class="product-title" th:text="${producto.nombre}"></h2>
+                        
+                        <div class="product-price">
+                            <p class="new-price" th:text=" 'Precio:' + ${producto.precio}"> <span>$249.00</span></p>
+                        </div>
+
+                        <div class="product-detail">
+                            <h2>Descripción del producto</h2>
+                            <p th:text="${producto.descripcion}"></p>
+                        </div>
+
+                        <div class="purchase-info">
+                             Cantidad:<input type="number" min="1" max="10" value="1" id="cantidad" name="cantidad">
+                            <button type="submit" class="btn-add">
+                                Añadir al Carrito 
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            
+        </section>
+        
+        
+         <!--================= Footer Producto Usuario ====================-->  
+        <div th:include="usuario/template_user.html::footer"></div>
+
+    </body>
+</html>
