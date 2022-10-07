@@ -28,10 +28,10 @@
               <div class="mid">
                 <div class="info">
                   <h2>Datos Orden</h2>
-                  <label>Nombre : Juan Carlos Sinisterra</label>
-                  <label>Direccion : Avenida 3 Norte 8-40</label>
-                  <label>Correo : jcsinisterra@gmail.com</label> 
-                  <label>Telefono : (+57) 3110997601</label> 
+                  <label th:text=" 'Nombre: ' + ${usuario.nombre}"></label>
+                  <label th:text=" 'Dirección: ' + ${usuario.direccion}"></label>
+                  <label th:text=" 'Correo: ' + ${usuario.email}"></label> 
+                  <label th:text=" 'Teléfono: ' + ${usuario.telefono}"></label> 
                 </div>
               </div><!--End Invoice Mid-->
               <div class="order-title">  
@@ -48,11 +48,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr >
-                        <td>Camiseta XL Hombre</td>
-                        <td>$87</td>
-                        <td>4</td>
-                        <td>$549</td>
+                      <tr th:each="dtorden:${carrito}">
+                        <td th:text="${dtorden.nombre}"></td>
+                        <td th:text="${dtorden.precio}"></td>
+                        <td th:text="${dtorden.cantidad}"></td>
+                        <td th:text="${dtorden.total}">$</td>
                       </tr>
                     </tbody>
                 </table>
@@ -65,7 +65,7 @@
                           <tbody>
                             <tr>
                               <td>Total:</td>
-                              <td>$549</td>
+                              <td th:text="${orden.total}"></td>
                             </tr>
                           </tbody>
                         </table>

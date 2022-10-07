@@ -4,6 +4,8 @@ package com.desarrollo.ecommerce;
 import com.desarrollo.ecommerce.model.DetalleOrden;
 import com.desarrollo.ecommerce.model.Orden;
 import com.desarrollo.ecommerce.model.Producto;
+import com.desarrollo.ecommerce.model.Usuario;
+import com.desarrollo.ecommerce.service.InterfaceUsuarioService;
 import com.desarrollo.ecommerce.service.ProductoService;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +34,9 @@ public class HomeController {
     
     @Autowired 
     private ProductoService productoService; //Acceder a los productos agregados desde el admin
+    
+    @Autowired
+    private InterfaceUsuarioService usuarioService;
     
     List<DetalleOrden> detalles = new ArrayList<>();//almacenamos los detalles de la orden de compra
     
@@ -138,7 +143,11 @@ public class HomeController {
     }
     
     @GetMapping("/ordenCompra")
-    public String ordenCompra(){
+    public String ordenCompra(Model model){
+        Usuario usuario = usuarioService.findById(3).get();
+        model.addAttribute("carrito", detalles);
+        model.addAttribute("orden", orden);
+        model.addAttribute("usuario", usuario);
         return "usuario/resumenorden";
     }
 }

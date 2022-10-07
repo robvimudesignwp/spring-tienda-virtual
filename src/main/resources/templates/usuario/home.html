@@ -41,7 +41,7 @@
                <section class="section-grid">
                     <div class="grid-product">
                            <div class="image-product-container" th:each="producto: ${productos}">
-                             <img th:src="@{/images/{img} (img=${producto.imagen})}" alt="" class="image-product"/>
+                             <img th:src="@{/images/{image} (image=${producto.imagen})}" alt="" class="image-product"/>
                              <h4 th:text="${producto.nombre}"></h4>
                              <p th:text="${producto.precio}"></p>
                              <a class="btn-default" th:href="@{/productohome/{id} (id=${producto.id})}">Ver Producto</a>

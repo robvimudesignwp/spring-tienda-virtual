@@ -1269,6 +1269,8 @@ div .btn-add{
 .info label{
   color: #2f3192;
   display: block;
+  font-weight: 600;
+  font-size: 15px;
   margin-left: 0;
 }
 
