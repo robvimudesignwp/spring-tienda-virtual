@@ -428,6 +428,10 @@ ul {
 
 /*============ products ================*/
 
+div a.btn-add{
+    float: left;
+    margin: 0 50px auto;
+}
 
 .container-products{
   /*align-items: center;*/
@@ -1081,7 +1085,11 @@ img{
   width: 40px;
 }
 
-.title-cart h3{
+.title-cart a{
+    
+}
+
+.title-cart h3, .title-cart h2{
     color: #2f3192;
     font-weight: 700;
     padding: 10px 5px;
@@ -1257,6 +1265,7 @@ div .btn-add{
     float: right;
     margin: 0 50px auto;
 }
+
 
 .summary tr, .summary td{
     color: #2f3192;
