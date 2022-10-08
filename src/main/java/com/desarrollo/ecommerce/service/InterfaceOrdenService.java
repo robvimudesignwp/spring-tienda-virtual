@@ -10,6 +10,8 @@ import com.desarrollo.ecommerce.model.Orden;
 
 
 public interface InterfaceOrdenService  {
+    
+    
     Orden save (Orden orden); //Vamos a recibir un objeto de Orden para que persista en la BD
     
 }
