@@ -1,7 +1,7 @@
 
 package com.desarrollo.ecommerce.repository;
 
-import com.desarrollo.ecommerce.model.Usuario;
+import com.desarrollo.ecommerce.model.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
+public interface InterfaceProductoRepository extends JpaRepository<Producto, Integer>{
     
 }
