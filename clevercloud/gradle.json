@@ -1,0 +1,9 @@
+{
+  "build": {
+    "type": "gradle",
+    "goal": "assemble"
+  },
+  "deploy": {
+    "jarName": "./build/libs/tiendavirtual-1.0.jar"
+  }
+}
